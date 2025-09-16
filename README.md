@@ -1,1 +1,1 @@
-hello!
+next.js + react + typescript + magic

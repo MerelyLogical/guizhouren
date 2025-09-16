@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata = { title: "Restaurant" }
+export const metadata: Metadata =  { title: "Restaurant" }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (

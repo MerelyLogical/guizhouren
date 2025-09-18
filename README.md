@@ -1,1 +1,1 @@
-next.js + react + typescript + magic
+next.js + react + typescript + tailwind + magic

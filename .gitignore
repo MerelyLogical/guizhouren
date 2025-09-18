@@ -4,3 +4,5 @@
 *.tsbuildinfo
 next-env.d.ts
 
+# don't upload pictures yet for copyright
+/public

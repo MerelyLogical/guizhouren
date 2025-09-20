@@ -10,10 +10,10 @@ export default function Home() {
       >
         <div className="bg-black/50 absolute inset-0" />
         <div className="relative z-10 max-w-2xl px-4">
-          <h1 className="text-brand-1 font-bold whitespace-nowrap text-[clamp(2rem,5vw,3.5rem)]">
+          <h1 className="text-white font-bold whitespace-nowrap text-[clamp(2rem,5vw,3.5rem)]">
             Welcome to Guizhouren
           </h1>
-          <p className="mt-4 text-lg">Authentic Guizhou cuisine</p>
+          <p className="text-white mt-4 text-lg">Authentic Guizhou cuisine</p>
         </div>
       </section>
 

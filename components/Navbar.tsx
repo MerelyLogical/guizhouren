@@ -2,7 +2,7 @@ import Link from "next/link"
 
 export default function Navbar() {
   return (
-    <nav className="bg-brand/30 shadow">
+    <nav className="bg-brand/45 shadow">
       <div className="mx-auto max-w-6xl px-4 py-3 flex justify-between items-center">
         <Link href="/" className="flex items-center gap-2">
           <img src="/logo.jpg" alt="Logo" className="h-8 w-auto" />

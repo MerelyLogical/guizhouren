@@ -27,7 +27,7 @@ export default function Home() {
       </section>
 
       <CurtainRevealSection
-        className="bg-brand/30"
+        className=""
         contentClassName="mx-auto max-w-6xl px-4 py-24 grid grid-cols-1 md:grid-cols-2 gap-12 items-center"
         curtainColor="rgba(29 28 94/1)"
         minHeightVh={230}
@@ -49,7 +49,7 @@ export default function Home() {
         </div>
       </CurtainRevealSection>
 
-      <section className="bg-brand/45">
+      <section className="bg-brand/15">
         <AnimatedSection as="div" className="mx-auto max-w-6xl px-4 py-24 grid grid-cols-1 md:grid-cols-2 gap-12 items-center" delay={0.5}>
           <div>
             <img
@@ -69,7 +69,7 @@ export default function Home() {
         </AnimatedSection>
       </section>
 
-      <section className="bg-brand/30">
+      <section className="">
         <AnimatedSection className="mx-auto max-w-6xl px-4 py-24 grid grid-cols-1 md:grid-cols-3 gap-12" delay={0.5}>
           <div className="relative">
             <span className="absolute -top-6 -left-2 text-brand/25 text-7xl font-bold select-none">
@@ -112,7 +112,7 @@ export default function Home() {
         </AnimatedSection>
       </section>
 
-      <section className="bg-brand/45">
+      <section className="bg-brand/15">
         <AnimatedSection className="py-24 text-center text-brand/90" delay={0.5}>
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Ready to taste Guizhou?

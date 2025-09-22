@@ -10,7 +10,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <body className="flex min-h-screen flex-col">
         <Navbar />
-        <main className="flex-1">{children}</main>
+        <main className="bg-brand/30 flex-1">{children}</main>
         <Footer />
       </body>
     </html>

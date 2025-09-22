@@ -12,14 +12,15 @@ import {
 
 import { cn } from "@/lib/utils";
 
-type OffsetTuple = [string, string];
+type ScrollOffsetConfig = NonNullable<Parameters<typeof useScroll>[0]>["offset"];
+const DEFAULT_SCROLL_OFFSET: ScrollOffsetConfig = ["start end", "end start"];
 
 type CurtainRevealSectionProps = {
   children: ReactNode;
   className?: string;
   contentClassName?: string;
   curtainColor?: string;
-  offset?: OffsetTuple;
+  offset?: ScrollOffsetConfig;
   minHeightVh?: number;
   startOffset?: number;
 };
@@ -28,10 +29,10 @@ export default function CurtainRevealSection({
   children,
   className,
   contentClassName,
-  curtainColor,
-  offset = ["start end", "end start"],
+  curtainColor = "rgba(29, 28, 94, 0.45)",
+  offset = DEFAULT_SCROLL_OFFSET,
   minHeightVh = 220,
-  startOffset = 0.18,
+  startOffset = 0.12,
 }: CurtainRevealSectionProps) {
   const sectionRef = useRef<HTMLElement | null>(null);
   const maskId = useId().replace(/:/g, "_");
@@ -68,8 +69,14 @@ export default function CurtainRevealSection({
   const leftBottomX = useTransform(bottomSpread, (value) => 50 - value);
   const rightBottomX = useTransform(bottomSpread, (value) => 50 + value);
 
-  const rightMidX = useTransform([bottomSpread, sideBulge], ([spread, bulge]) => 50 + 0.75 * spread + bulge);
-  const leftMidX = useTransform([bottomSpread, sideBulge], ([spread, bulge]) => 50 - 0.75 * spread - bulge);
+  const rightMidX = useTransform<number, number>(
+    [bottomSpread, sideBulge],
+    ([spread, bulge]: number[]) => 50 + 0.75 * spread + bulge
+  );
+  const leftMidX = useTransform<number, number>(
+    [bottomSpread, sideBulge],
+    ([spread, bulge]: number[]) => 50 - 0.75 * spread - bulge
+  );
 
   // Mask path expands from a narrow door to a wide arch as the user scrolls.
   const openingPath = useMotionTemplate`

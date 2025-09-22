@@ -1,1 +1,1 @@
-next.js + react + typescript + tailwind + magic
+next.js + react + typescript + tailwind + shadcn/ui + framer motion + magic

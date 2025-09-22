@@ -1,41 +1,53 @@
 import FullWidthCarousel from "@/components/FullWidthCarousel";
 import AnimatedSection from "@/components/AnimatedSection";
+import CurtainRevealSection from "@/components/CurtainRevealSection";
 
 export default function Home() {
   return (
     <>
       <section
         className="relative h-[70vh] flex items-center justify-center text-center text-brand-1"
-        style={{ backgroundImage: "url('/logo.jpg')", backgroundSize: "cover" }}
+        //style={{ backgroundImage: "url('/logo.jpg')", backgroundSize: "cover" }}
       >
-        <div className="bg-black/50 absolute inset-0" />
+        <div className="bg-brand absolute inset-0" />
         <div className="relative z-10 max-w-2xl px-4">
           <h1 className="text-white font-bold whitespace-nowrap text-[clamp(2rem,5vw,3.5rem)]">
             Welcome to Guizhouren
           </h1>
           <p className="text-white mt-4 text-lg">Authentic Guizhou cuisine</p>
+          <br></br>
+          <a
+            href="/contact"
+            className="inline-block bg-light hover:bg-green1 text-brand hover:text-brand
+            font-semibold px-8 py-4 rounded-2xl shadow-lg transition"
+          >
+            Contact Us
+          </a>
         </div>
       </section>
 
-      <section className="bg-brand/30">
-        <AnimatedSection as="div" className="mx-auto max-w-6xl px-4 py-24 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          <div>
-            <h2 className="text-4xl font-bold mb-6">A Taste of Guizhou</h2>
-            <p className="text-gray-600 text-lg">
-              Experience the bold and unique flavors of Guizhou cuisine, crafted
-              with care and tradition. Every dish tells a story of our heritage.
-            </p>
-          </div>
+      <CurtainRevealSection
+        className="bg-brand/30"
+        contentClassName="mx-auto max-w-6xl px-4 py-24 grid grid-cols-1 md:grid-cols-2 gap-12 items-center"
+        curtainColor="rgba(29 28 94/1)"
+        minHeightVh={230}
+      >
+        <div>
+          <h2 className="text-4xl font-bold mb-6">A Taste of Guizhou</h2>
+          <p className="text-gray-600 text-lg">
+            Experience the bold and unique flavors of Guizhou cuisine, crafted
+            with care and tradition. Every dish tells a story of our heritage.
+          </p>
+        </div>
 
-          <div>
-            <img
-              src="/guizhouren.jpg"
-              alt="Guizhou dish"
-              className="rounded-2xl shadow-lg w-full h-auto object-cover"
-            />
-          </div>
-        </AnimatedSection>
-      </section>
+        <div>
+          <img
+            src="/guizhouren.jpg"
+            alt="Guizhou dish"
+            className="rounded-2xl shadow-lg w-full h-auto object-cover"
+          />
+        </div>
+      </CurtainRevealSection>
 
       <section className="bg-brand/45">
         <AnimatedSection as="div" className="mx-auto max-w-6xl px-4 py-24 grid grid-cols-1 md:grid-cols-2 gap-12 items-center" delay={0.5}>
@@ -100,12 +112,12 @@ export default function Home() {
         </AnimatedSection>
       </section>
 
-      <section className="bg-brand/65">
-        <AnimatedSection className="py-24 text-center text-light" delay={0.5}>
+      <section className="bg-brand/45">
+        <AnimatedSection className="py-24 text-center text-brand/90" delay={0.5}>
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Ready to taste Guizhou?
           </h2>
-          <p className="text-lg text-light/80 mb-10">
+          <p className="text-lg text-pink1/80 mb-10">
             Explore our menu and discover the authentic flavors we bring to your table.
           </p>
           <a

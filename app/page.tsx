@@ -187,8 +187,8 @@ export default function Home() {
         {/* Image Carousel */}
         <PeekCarousel
           images={[
-            { src: "/laziji.jpg", alt: "Spicy beef noodles" },
-            { src: "/chili.PNG", alt: "Pickled chili fish" },
+            { src: "/logo.jpg", alt: "Spicy beef noodles" },
+            { src: "/guizhouren.jpg", alt: "Pickled chili fish" },
             { src: "/running potato.PNG", alt: "Street-side skewers" },
             { src: "/slogan.jpg", alt: "Tofu with chilis" },
             { src: "/menu1.PNG", alt: "Guizhou peppers" },

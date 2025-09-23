@@ -82,49 +82,55 @@ export default function Home() {
 
       {/* === Three-Pillar Highlights === */}
       <section className="">
-        <AnimatedSection className="mx-auto max-w-6xl px-4 py-24 grid grid-cols-1 md:grid-cols-3 gap-12" delay={0.5}>
-          <div className="relative">
-            <span className="absolute -top-6 -left-2 text-brand/25 text-7xl font-bold select-none">
-              1
-            </span>
+        <div className="mx-auto max-w-6xl px-4 py-24 grid grid-cols-1 md:grid-cols-3 gap-12">
+          <AnimatedSection as="div" delay={0.3}>
             <div className="relative">
-              <h3 className="text-xl font-semibold mb-2">Authentic Recipes</h3>
-              <br></br>
-              <p className="text-gray-600">
-                Passed down through generations, our dishes bring the true flavors of
-                Guizhou to your table.
-              </p>
+              <span className="absolute -top-6 -left-2 text-brand/25 text-7xl font-bold select-none">
+                1
+              </span>
+              <div className="relative">
+                <h3 className="text-xl font-semibold mb-2">Authentic Recipes</h3>
+                <br></br>
+                <p className="text-gray-600">
+                  Passed down through generations, our dishes bring the true flavors of
+                  Guizhou to your table.
+                </p>
+              </div>
             </div>
-          </div>
+          </AnimatedSection>
 
-          <div className="relative">
-            <span className="absolute -top-6 -left-2 text-brand/25 text-7xl font-bold select-none">
-              2
-            </span>
+          <AnimatedSection as="div" delay={0.5}>
             <div className="relative">
-              <h3 className="text-xl font-semibold mb-2">Fresh Ingredients</h3>
-              <br></br>
-              <p className="text-gray-600">
-                We source only the freshest, seasonal produce to ensure vibrant and
-                flavorful meals.
-              </p>
+              <span className="absolute -top-6 -left-2 text-brand/25 text-7xl font-bold select-none">
+                2
+              </span>
+              <div className="relative">
+                <h3 className="text-xl font-semibold mb-2">Fresh Ingredients</h3>
+                <br></br>
+                <p className="text-gray-600">
+                  We source only the freshest, seasonal produce to ensure vibrant and
+                  flavorful meals.
+                </p>
+              </div>
             </div>
-          </div>
+          </AnimatedSection>
 
-          <div className="relative">
-            <span className="absolute -top-6 -left-2 text-brand/25 text-7xl font-bold select-none">
-              3
-            </span>
+          <AnimatedSection as="div" delay={0.7}>
             <div className="relative">
-              <h3 className="text-xl font-semibold mb-2">Warm Hospitality</h3>
-              <br></br>
-              <p className="text-gray-600">
-                Every guest is family. We serve with care to create a welcoming
-                experience.
-              </p>
+              <span className="absolute -top-6 -left-2 text-brand/25 text-7xl font-bold select-none">
+                3
+              </span>
+              <div className="relative">
+                <h3 className="text-xl font-semibold mb-2">Warm Hospitality</h3>
+                <br></br>
+                <p className="text-gray-600">
+                  Every guest is family. We serve with care to create a welcoming
+                  experience.
+                </p>
+              </div>
             </div>
-          </div>
-        </AnimatedSection>
+          </AnimatedSection>
+        </div>
       </section>
 
       {/* === CTA & Gallery Section === */}

@@ -1,10 +1,12 @@
 import FullWidthCarousel from "@/components/FullWidthCarousel";
 import AnimatedSection from "@/components/AnimatedSection";
 import CurtainRevealSection from "@/components/CurtainRevealSection";
+import ParallaxOverlayImage from "@/components/ParallaxOverlayImage";
 
 export default function Home() {
   return (
     <>
+      {/* === Hero Section === */}
       <section
         className="relative h-[70vh] flex items-center justify-center text-center text-brand-1"
         //style={{ backgroundImage: "url('/logo.jpg')", backgroundSize: "cover" }}
@@ -26,6 +28,7 @@ export default function Home() {
         </div>
       </section>
 
+      {/* === Signature Story Section === */}
       <CurtainRevealSection
         className=""
         contentClassName="mx-auto max-w-6xl px-4 py-24 grid grid-cols-1 md:grid-cols-2 gap-12 items-center"
@@ -49,13 +52,21 @@ export default function Home() {
         </div>
       </CurtainRevealSection>
 
+      {/* === Alternating Feature Section === */}
       <section className="bg-brand/15">
         <AnimatedSection as="div" className="mx-auto max-w-6xl px-4 py-24 grid grid-cols-1 md:grid-cols-2 gap-12 items-center" delay={0.5}>
-          <div>
+          <div className="relative">
             <img
               src="/guizhouren.jpg"
               alt="Guizhou dish"
               className="rounded-2xl shadow-lg w-full h-auto object-cover"
+            />
+
+            <ParallaxOverlayImage
+              src="/logo.jpg"
+              alt="Sizzling Guizhou peppers"
+              className="absolute bottom-0 right-0 translate-x-[15%] translate-y-[35%] w-[35%] min-w-[120px] max-w-[180px]"
+              imgClassName="object-cover"
             />
           </div>
 
@@ -69,6 +80,7 @@ export default function Home() {
         </AnimatedSection>
       </section>
 
+      {/* === Three-Pillar Highlights === */}
       <section className="">
         <AnimatedSection className="mx-auto max-w-6xl px-4 py-24 grid grid-cols-1 md:grid-cols-3 gap-12" delay={0.5}>
           <div className="relative">
@@ -77,6 +89,7 @@ export default function Home() {
             </span>
             <div className="relative">
               <h3 className="text-xl font-semibold mb-2">Authentic Recipes</h3>
+              <br></br>
               <p className="text-gray-600">
                 Passed down through generations, our dishes bring the true flavors of
                 Guizhou to your table.
@@ -90,6 +103,7 @@ export default function Home() {
             </span>
             <div className="relative">
               <h3 className="text-xl font-semibold mb-2">Fresh Ingredients</h3>
+              <br></br>
               <p className="text-gray-600">
                 We source only the freshest, seasonal produce to ensure vibrant and
                 flavorful meals.
@@ -103,6 +117,7 @@ export default function Home() {
             </span>
             <div className="relative">
               <h3 className="text-xl font-semibold mb-2">Warm Hospitality</h3>
+              <br></br>
               <p className="text-gray-600">
                 Every guest is family. We serve with care to create a welcoming
                 experience.
@@ -112,7 +127,9 @@ export default function Home() {
         </AnimatedSection>
       </section>
 
+      {/* === CTA & Gallery Section === */}
       <section className="bg-brand/15">
+        {/* CTA Banner */}
         <AnimatedSection className="py-24 text-center text-brand/90" delay={0.5}>
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Ready to taste Guizhou?
@@ -129,6 +146,7 @@ export default function Home() {
           </a>
         </AnimatedSection>
 
+        {/* Image Carousel */}
         <AnimatedSection delay={0.5}>
           <FullWidthCarousel
             images={[

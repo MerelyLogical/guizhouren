@@ -1,7 +1,39 @@
+import Link from "next/link";
 import AnimatedSection from "@/components/AnimatedSection";
 import CurtainRevealSection from "@/components/CurtainRevealSection";
 import ParallaxOverlayImage from "@/components/ParallaxOverlayImage";
 import PeekCarousel from "@/components/PeekCarousel";
+
+type SocialLinkData = {
+  href: string;
+  label: string;
+};
+
+const SOCIAL_COLUMNS: SocialLinkData[][] = [
+  [
+    { href: "https://www.instagram.com", label: "Instagram" },
+    { href: "https://www.facebook.com", label: "Facebook" },
+    { href: "https://www.tiktok.com", label: "TikTok" },
+  ],
+  [
+    { href: "https://www.youtube.com", label: "YouTube" },
+    { href: "https://www.twitter.com", label: "X (Twitter)" },
+    { href: "https://www.linkedin.com", label: "LinkedIn" },
+  ],
+];
+
+function SocialLink({ href, label }: SocialLinkData) {
+  return (
+    <Link
+      href={href}
+      target="_blank"
+      rel="noreferrer"
+      className="text-lg text-brand transition hover:text-pink1"
+    >
+      {label}
+    </Link>
+  );
+}
 
 export default function Home() {
   return (
@@ -83,7 +115,7 @@ export default function Home() {
       {/* === Three-Pillar Highlights === */}
       <section className="">
         <div className="mx-auto max-w-6xl px-4 py-24 grid grid-cols-1 md:grid-cols-3 gap-12">
-          <AnimatedSection as="div" delay={0.3}>
+          <AnimatedSection as="div" delay={0.5}>
             <div className="relative">
               <span className="absolute -top-6 -left-2 text-brand/25 text-7xl font-bold select-none">
                 1
@@ -99,7 +131,7 @@ export default function Home() {
             </div>
           </AnimatedSection>
 
-          <AnimatedSection as="div" delay={0.5}>
+          <AnimatedSection as="div" delay={0.9}>
             <div className="relative">
               <span className="absolute -top-6 -left-2 text-brand/25 text-7xl font-bold select-none">
                 2
@@ -115,7 +147,7 @@ export default function Home() {
             </div>
           </AnimatedSection>
 
-          <AnimatedSection as="div" delay={0.7}>
+          <AnimatedSection as="div" delay={1.3}>
             <div className="relative">
               <span className="absolute -top-6 -left-2 text-brand/25 text-7xl font-bold select-none">
                 3
@@ -153,16 +185,40 @@ export default function Home() {
         </AnimatedSection>
 
         {/* Image Carousel */}
-          <PeekCarousel
-            images={[
-              { src: "/laziji.jpg", alt: "Spicy beef noodles" },
-              { src: "/chili.PNG", alt: "Pickled chili fish" },
-              { src: "/running potato.PNG", alt: "Street-side skewers" },
-              { src: "/slogan.jpg", alt: "Tofu with chilis" },
-              { src: "/menu1.PNG", alt: "Guizhou peppers" },
-            ]}
-          />
+        <PeekCarousel
+          images={[
+            { src: "/laziji.jpg", alt: "Spicy beef noodles" },
+            { src: "/chili.PNG", alt: "Pickled chili fish" },
+            { src: "/running potato.PNG", alt: "Street-side skewers" },
+            { src: "/slogan.jpg", alt: "Tofu with chilis" },
+            { src: "/menu1.PNG", alt: "Guizhou peppers" },
+          ]}
+        />
       </section>
+
+      {/* === Social Section === */}
+      <section className="">
+        <div className="mx-auto max-w-6xl px-4 py-20 text-center">
+          <h3 className="text-2xl font-semibold text-brand mb-12">Connect With Us</h3>
+          <div className="grid grid-cols-1 gap-10 divide-y divide-gray-200 md:grid-cols-2 md:divide-y-0 md:divide-x">
+            {SOCIAL_COLUMNS.map((links, index) => (
+              <div
+                key={index}
+                className={`flex flex-col items-center space-y-4 ${
+                  index === 0
+                    ? "pb-10 md:pb-0 md:pr-12"
+                    : "pt-10 md:pt-0 md:pl-12"
+                }`}
+              >
+                {links.map((link) => (
+                  <SocialLink key={link.label} {...link} />
+                ))}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
     </>
   )
 }

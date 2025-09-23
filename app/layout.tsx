@@ -8,7 +8,7 @@ export const metadata: Metadata =  { title: "Restaurant" }
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className="flex min-h-screen flex-col">
+      <body className="flex min-h-screen flex-col overflow-x-hidden">
         <Navbar />
         <main className="bg-brand/30 flex-1">{children}</main>
         <Footer />

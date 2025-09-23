@@ -1,7 +1,7 @@
-import FullWidthCarousel from "@/components/FullWidthCarousel";
 import AnimatedSection from "@/components/AnimatedSection";
 import CurtainRevealSection from "@/components/CurtainRevealSection";
 import ParallaxOverlayImage from "@/components/ParallaxOverlayImage";
+import PeekCarousel from "@/components/PeekCarousel";
 
 export default function Home() {
   return (
@@ -140,7 +140,7 @@ export default function Home() {
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Ready to taste Guizhou?
           </h2>
-          <p className="text-lg text-pink1/80 mb-10">
+          <p className="text-lg text-gray-600 mb-10">
             Explore our menu and discover the authentic flavors we bring to your table.
           </p>
           <a
@@ -153,17 +153,15 @@ export default function Home() {
         </AnimatedSection>
 
         {/* Image Carousel */}
-        <AnimatedSection delay={0.5}>
-          <FullWidthCarousel
+          <PeekCarousel
             images={[
-              { src: "/logo.jpg", alt: "Spicy beef noodles" },
+              { src: "/IMG_6269.PNG", alt: "Spicy beef noodles" },
               { src: "/guizhouren.jpg", alt: "Pickled chili fish" },
               { src: "/logo.jpg", alt: "Street-side skewers" },
               { src: "/guizhouren.jpg", alt: "Tofu with chilis" },
               { src: "/logo.jpg", alt: "Guizhou peppers" },
             ]}
           />
-        </AnimatedSection>
       </section>
     </>
   )
